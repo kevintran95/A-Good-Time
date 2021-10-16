@@ -27,7 +27,26 @@ const typeDefs = gql`
     events: [Event]!
   }
 
+  type Query {
+    events: [Event]
+    event(name: String!): Event
+    participants: [Participant]
+    participant(name: String!): Participant
+  }
 
+  type Mutation {
+    addUser(name: String!, email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
+    addEvent(name: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!): Event
+    addParticipant(name: String!, description: String!): Participant
+    removeEvent(eventID: ID!): Event
+    removeParticipant(eventID: ID!): Participant
+
+    how ?????
+    -----------------------------------
+    updateEvent 
+    updateParticipant
+  }
 `;
 
 module.exports = typeDefs;
