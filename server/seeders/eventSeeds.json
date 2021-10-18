@@ -1,14 +1,21 @@
 [
   {
     "eventName": "EDC",
-    "eventDate": "October 24th, 2021",
+    "eventDate": "October 24, 2021",
     "eventStart": "7 pm",
     "eventEnd": "2am",
     "eventType": "Music Festival"
   },
   {
+    "eventName":"SneakerCon",
+    "eventDate": "October 26, 2021",
+    "eventStart": "12pm",
+    "eventEnd": "6pm",
+    "eventType": "Expo"
+  },
+  {
     "eventName": "Halo Pro Series",
-    "eventDate": "October 29th, 2021",
+    "eventDate": "October 29, 2021",
     "eventStart": "1pm",
     "eventEnd": "7pm",
     "eventType": "Game Tournament"
@@ -16,16 +23,16 @@
 
   {
     "eventName": "Subiefest",
-    "eventDate": "",
-    "eventStart": "",
-    "eventEnd": "",
+    "eventDate": "October 30, 2021",
+    "eventStart": "12pm",
+    "eventEnd": "8pm",
     "eventType": "Car Show"
   },
   {
     "eventName": "World Battles",
-    "eventDate": "",
-    "eventStart": "",
-    "eventEnd": "",
+    "eventDate": "October 31, 2021",
+    "eventStart": "5pm",
+    "eventEnd": "9pm",
     "eventType": "Dance Competition"
   }
 ]
