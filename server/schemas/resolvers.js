@@ -1,17 +1,21 @@
 const {AuthenticationError} = require('apollo-server-express');
 const {User, Event, Participant} = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
         events: async () => {
             return Event.find().populate('Participant');
         },
+
         event: async (parent, { eventName }) => {
             return Event.findOne({ eventName });
         },
+
         participants: async () => {
             return Participant.find().populate('Event');
         },
+
         participant: async (parent, { participantName }) => {
             return Participant.findOne({ participantName });
         },
@@ -20,8 +24,10 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, { userName, type, email, password }) => {
             const user = await User.create({ userName, type, email, password });
-            return {user};
+            const token = signToken(user);
+            return { token, user };
         },
+
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
 
@@ -35,22 +41,29 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            return {user};
+            const token = signToken(user);
+
+            return { token, user };
         },
+
         addEvent: async (parent, { eventName, eventDate, eventStart, eventEnd, eventType }) => {
             const event = await User.create({ eventName, eventDate, eventStart, eventEnd, eventType });
             return {event};
         },
+
         addParticipant: async (parent, { participantName, description }) => {
             const participant = await User.create({ participantName, description });
             return {participant};
         },
+
         removeEvent: async (parent, { eventId }) => {
             return Event.findOneAndDelete({ _id: eventId });
         },
+
         removeParticipant: async (parent, { participantId }) => {
             return Participant.findOneAndDelete({ _id: participantId });
         },
+
         updateEvent: async (parent, { eventId, eventName, eventDate, eventStart, eventEnd, eventType }) => {
             return Event.findOneAndUpdate({ _id: eventId },
                 {
@@ -62,6 +75,7 @@ const resolvers = {
                 }
             );
         },
+
         updateParticipant: async (parent, {participantId, participantName, description }) => {
             return Participant.findOneAndUpdate({ _id, participantId },
                 {
