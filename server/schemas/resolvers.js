@@ -43,7 +43,7 @@ const resolvers = {
         removeParticipant: async (parent, { participantId }) => {
             return Participant.findOneAndDelete({ _id: participantId });
         },
-        addEvent: async (parent, { eventId, eventName, eventDate, eventStart, eventEnd, eventType }) => {
+        updateEvent: async (parent, { eventId, eventName, eventDate, eventStart, eventEnd, eventType }) => {
             return Event.findOneAndUpdate({ _id: eventId },
                 {
                     $addToSet: { eventName, eventDate, eventStart, eventEnd, eventType }
@@ -54,7 +54,7 @@ const resolvers = {
                 }
             );
         },
-        addParticipant: async (parent, {participantId, participantName, description }) => {
+        updateParticipant: async (parent, {participantId, participantName, description }) => {
             return Participant.findOneAndUpdate({ _id, participantId },
                 {
                     $addToSet: { participantName, description }
