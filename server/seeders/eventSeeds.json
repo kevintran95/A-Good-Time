@@ -1,0 +1,31 @@
+[
+  {
+    "eventName": "EDC",
+    "eventDate": "October 24th, 2021",
+    "eventStart": "7 pm",
+    "eventEnd": "2am",
+    "eventType": "Music Festival"
+  },
+  {
+    "eventName": "Halo Pro Series",
+    "eventDate": "October 29th, 2021",
+    "eventStart": "1pm",
+    "eventEnd": "7pm",
+    "eventType": "Game Tournament"
+  },
+
+  {
+    "eventName": "Subiefest",
+    "eventDate": "",
+    "eventStart": "",
+    "eventEnd": "",
+    "eventType": "Car Show"
+  },
+  {
+    "eventName": "World Battles",
+    "eventDate": "",
+    "eventStart": "",
+    "eventEnd": "",
+    "eventType": "Dance Competition"
+  }
+]
