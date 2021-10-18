@@ -9,7 +9,7 @@ export default function Login() {
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
-                        Hello Fun Person
+                        Hello
                     </Form.Text>
                 </Form.Group>
 
