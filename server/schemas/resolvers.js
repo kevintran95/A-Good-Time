@@ -37,6 +37,14 @@ const resolvers = {
 
             return {user};
         },
+        addEvent: async (parent, { eventName, eventDate, eventStart, eventEnd, eventType }) => {
+            const event = await User.create({ eventName, eventDate, eventStart, eventEnd, eventType });
+            return {event};
+        },
+        addParticipant: async (parent, { participantName, description }) => {
+            const participant = await User.create({ participantName, description });
+            return {participant};
+        },
         removeEvent: async (parent, { eventId }) => {
             return Event.findOneAndDelete({ _id: eventId });
         },

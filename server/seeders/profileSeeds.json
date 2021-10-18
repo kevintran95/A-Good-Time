@@ -1,8 +1,14 @@
 [
   {
-    "userName": "thedjguy",
+    "userName": "thedjguy97",
     "userType": "promoter",
     "email": "thedjguy@mail.com",
+    "password": "password1234"
+  },
+  {
+    "userName": "prisonmike88",
+    "userType": "promoter",
+    "email": "prisonmike88@mail.com",
     "password": "password1234"
   }
 ]
