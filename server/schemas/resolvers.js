@@ -12,6 +12,10 @@ const resolvers = {
             return Event.findOne({ eventName });
         },
 
+        eventDate: async (parent, { eventDate }) => {
+            return Event.findOne({ eventDate });
+        },
+
         participants: async () => {
             return Participant.find().populate('Event');
         },
@@ -22,10 +26,10 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent, { userName, type, email, password }) => {
-            const user = await User.create({ userName, type, email, password });
-            const token = signToken(user);
-            return { token, user };
+        addUser: async (parent, { userName, userType, email, password }) => {
+            const user = await User.create({ userName, userType, email, password });
+            // const token = signToken(user);
+            return ( user );
         },
 
         login: async (parent, { email, password }) => {
@@ -41,9 +45,9 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            const token = signToken(user);
+            // const token = signToken(user);
 
-            return { token, user };
+            return ( user );
         },
 
         addEvent: async (parent, { eventName, eventDate, eventStart, eventEnd, eventType }) => {

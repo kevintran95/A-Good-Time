@@ -31,12 +31,13 @@ const typeDefs = gql`
   type Query {
     events: [Event]
     event(eventName: String!): Event
+    eventDate(eventDate: String!): Event
     participants: [Participant]
     participant(participantName: String!): Participant
   }
 
   type Mutation {
-    addUser(userName: String!, email: String!, password: String!): User
+    addUser(userName: String!, userType: String!, email: String!, password: String!): User
     login(email: String!, password: String!): User
 
     addEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!): Event
@@ -44,7 +45,7 @@ const typeDefs = gql`
 
     updateEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!): Event
     updateParticipant(participantName: String!, description: String!): Participant
-    
+
     removeEvent(eventID: ID!): Event
     removeParticipant(eventID: ID!): Participant
   }
