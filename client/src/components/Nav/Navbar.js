@@ -1,6 +1,6 @@
-import React from 'react'
+import { Navbar, Container, Nav } from 'react-bootstrap'
 
-export default function Navbar() {
+export default function NavbarOne() {
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -8,10 +8,10 @@ export default function Navbar() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <ul><a onClick={() => handlePage('About')}>Upcoming Events</a></ul>
-                            <ul><a onClick={() => handlePage('Project')}></a></ul>
-                            <ul><a onClick={() => handlePage('Contact')}>Contact</a></ul>
-                            <ul><a onClick={() => handlePage('Resume')}>Resume</a></ul>
+                            <ul>Upcoming Events</ul>
+                            <ul>Calendar</ul>
+                            <ul>Good Time</ul>
+                            <ul>Great Time</ul>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
