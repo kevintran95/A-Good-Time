@@ -1,16 +1,12 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap';
 
-export default function Login() {
+export default function Signup() {
     return (
         <div className="col-sm-4" style={{ textAlign: 'center' }}>
             <Form>
-                <Form.Group className="mb-3">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control placeholder="Username" />
-                </Form.Group>
 
-                <Form.Label>User Type</Form.Label>
+            <Form.Label>User Type</Form.Label>
                 {['checkbox'].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
                         <Form.Check
@@ -30,6 +26,11 @@ export default function Login() {
                     </div>
                 ))}
 
+                <Form.Group className="mb-3">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control placeholder="Username" />
+                </Form.Group>
+
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder=" Email" />
@@ -42,7 +43,7 @@ export default function Login() {
 
 
                 <Button variant="primary" type="submit">
-                    Join The Fun
+                    Submit
                 </Button>
             </Form>
         </div>
