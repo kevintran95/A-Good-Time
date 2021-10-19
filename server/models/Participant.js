@@ -6,7 +6,7 @@ const participantSchema = new Schema({
         required: true,
         trim: true
     },
-    description: {
+    participantDescription: {
         type: String,
         required: true,
         trim: true
