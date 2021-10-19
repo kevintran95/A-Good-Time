@@ -18,13 +18,14 @@ const typeDefs = gql`
     eventStart: String
     eventEnd: String
     eventType: String
+    eventDescription: String
     participants: [Participant]!
   }
 
   type Participant {
     _id: ID
     participantName: String
-    description: String
+    participantDescription: String
     events: [Event]!
   }
 
@@ -40,11 +41,11 @@ const typeDefs = gql`
     addUser(userName: String!, userType: String!, email: String!, password: String!): User
     login(email: String!, password: String!): User
 
-    addEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!): Event
-    addParticipant(participantName: String!, description: String!): Participant
+    addEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
+    addParticipant(participantName: String!, participantDescription: String!): Participant
 
-    updateEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!): Event
-    updateParticipant(participantName: String!, description: String!): Participant
+    updateEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
+    updateParticipant(participantName: String!, participantDescription: String!): Participant
 
     removeEvent(eventID: ID!): Event
     removeParticipant(eventID: ID!): Participant

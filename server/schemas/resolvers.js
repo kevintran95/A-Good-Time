@@ -50,13 +50,13 @@ const resolvers = {
             return ( user );
         },
 
-        addEvent: async (parent, { eventName, eventDate, eventStart, eventEnd, eventType }) => {
-            const event = await User.create({ eventName, eventDate, eventStart, eventEnd, eventType });
+        addEvent: async (parent, { eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
+            const event = await User.create({ eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
             return {event};
         },
 
-        addParticipant: async (parent, { participantName, description }) => {
-            const participant = await User.create({ participantName, description });
+        addParticipant: async (parent, { participantName, participantDescription }) => {
+            const participant = await User.create({ participantName, participantDescription });
             return {participant};
         },
 
@@ -68,10 +68,10 @@ const resolvers = {
             return Participant.findOneAndDelete({ _id: participantId });
         },
 
-        updateEvent: async (parent, { eventId, eventName, eventDate, eventStart, eventEnd, eventType }) => {
+        updateEvent: async (parent, { eventId, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
             return Event.findOneAndUpdate({ _id: eventId },
                 {
-                    $addToSet: { eventName, eventDate, eventStart, eventEnd, eventType }
+                    $addToSet: { eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }
                 },
                 {
                     new: true,
@@ -80,10 +80,10 @@ const resolvers = {
             );
         },
 
-        updateParticipant: async (parent, {participantId, participantName, description }) => {
+        updateParticipant: async (parent, {participantId, participantName, participantDescription }) => {
             return Participant.findOneAndUpdate({ _id, participantId },
                 {
-                    $addToSet: { participantName, description }
+                    $addToSet: { participantName, participantDescription }
                 },
                 {
                     new:true,
