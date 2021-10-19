@@ -2,23 +2,26 @@
   {
     "eventName": "EDC",
     "eventDate": "October 24, 2021",
-    "eventStart": "7 pm",
+    "eventStart": "7pm",
     "eventEnd": "2am",
-    "eventType": "Music Festival"
+    "eventType": "Music Festival",
+    "eventDescription": "Electric dance Carnival (EDC) is the largest dance music festival in North America"
   },
   {
     "eventName":"SneakerCon",
     "eventDate": "October 26, 2021",
     "eventStart": "12pm",
     "eventEnd": "6pm",
-    "eventType": "Expo"
+    "eventType": "Expo",
+    "eventDescription": "Sneaker Con is a premier sneaker show, providing space for vendors to showcase rare sneakers"
   },
   {
     "eventName": "Halo Pro Series",
     "eventDate": "October 29, 2021",
     "eventStart": "1pm",
     "eventEnd": "7pm",
-    "eventType": "Game Tournament"
+    "eventType": "Game Tournament",
+    "eventDescription": "The biggest Halo competetion between some of the best teams around the world, battling it out for $1 million"
   },
 
   {
@@ -26,13 +29,15 @@
     "eventDate": "October 30, 2021",
     "eventStart": "12pm",
     "eventEnd": "8pm",
-    "eventType": "Car Show"
+    "eventType": "Car Show",
+    "eventDescription": "Subaru car show that allows drivers to showcase their modified Subarus"
   },
   {
     "eventName": "World Battles",
     "eventDate": "October 31, 2021",
     "eventStart": "5pm",
     "eventEnd": "9pm",
-    "eventType": "Dance Competition"
+    "eventType": "Dance Competition",
+    "eventDescription": "Hip-hop dance competition between teams, battling it out for the grand prize of $1 billion"
   }
 ]
