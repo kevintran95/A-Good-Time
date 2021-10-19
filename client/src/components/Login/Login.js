@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap';
 export default function Login() {
     return (
         <div>
-            <Form>
+            <Form className="col-sm-3" style={{margin: 0, textAlign: "center"}}>
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control placeholder=" " />
