@@ -4,8 +4,8 @@ import { Form } from 'react-bootstrap';
 export default function ScheduleEvent() {
     return (
         <div>
-            <Form.Label>Schedule Event</Form.Label>
-            <Form>
+            <h1 style={{background: "red", textAlign: "center"}}>Schedule Event</h1>
+            <Form className="col-sm-3" style={{margin: 0, marginTop: 50, textAlign: "center"}}>
 
                 <Form.Group className="mb-3">
                     <Form.Label>Event Type</Form.Label>

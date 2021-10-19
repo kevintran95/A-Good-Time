@@ -3,8 +3,8 @@ import { Form, Button } from 'react-bootstrap';
 
 export default function Signup() {
     return (
-        <div className="col-sm-4" style={{ textAlign: 'center' }}>
-            <Form>
+        <div>
+            <Form className="col-sm-3" style={{margin: 0, textAlign: "center"}}>
 
             <Form.Label>User Type</Form.Label>
                 {['checkbox'].map((type) => (
