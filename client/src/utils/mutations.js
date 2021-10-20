@@ -23,6 +23,20 @@ mutation addUser ($userName: String!, $userType: String!, $email: String!, $pass
   }
 `;
 
+export const ADD_EVENT = gql`
+mutation addEvent($eventName: String!, $eventDate: String!, $eventStart: String!, $eventEnd: String!, $eventType: String!,  $eventDescription: String!) {
+    addEvent(eventName: $eventName, eventDate: $eventDate, eventStart: $eventStart, eventEnd: $eventEnd, eventType: $eventType, eventDescription: $eventDescription) {
+      eventName,
+      eventDate,
+      eventStart,
+      eventEnd,
+      eventType,
+      eventDescription,
+      _id
+    } 
+  }
+`;
+
 
 
 
