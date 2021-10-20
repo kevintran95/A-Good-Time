@@ -28,8 +28,8 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, { userName, userType, email, password }) => {
             const user = await User.create({ userName, userType, email, password });
-            // const token = signToken(user);
-            return ( user );
+            const token = signToken(user);
+            return { token, user };
         },
 
         login: async (parent, { email, password }) => {
@@ -45,9 +45,9 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            // const token = signToken(user);
+            const token = signToken(user);
 
-            return ( user );
+            return { token, user };
         },
 
         addEvent: async (parent, { eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
