@@ -13,7 +13,6 @@ import {
 
 import NavbarOne from './components/Nav/Navbar';
 import Signup from './components/Signup/Signup';
-import Calendar from 'react-calendar';
 import ScheduleEvent from './components/ScheduleEvent/ScheduleEvent';
 import Login from './components/Login/Login'
 import Homepage from './components/Homepage/Homepage';
