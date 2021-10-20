@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form } from 'react-bootstrap';
 import { useMutation } from '@apollo/react-hooks';
+import Auth from '../../utils/auth';
 
 import { LOGIN } from '../../utils/mutations'
 
@@ -27,7 +28,7 @@ export default function Login() {
                 variables: { ...formState },
             });
 
-            // Auth.login(data.login.token);
+            Auth.login(data.login.token);
         } catch (e) {
             console.error(e);
         }

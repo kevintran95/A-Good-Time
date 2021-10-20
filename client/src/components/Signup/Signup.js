@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap';
-// import Auth from '../../utils/auth';
+import Auth from '../../utils/auth';
 
 import { useMutation } from '@apollo/react-hooks';
 import { SIGNUP } from '../../utils/mutations';
 
 export default function Signup() {
-    const [formState, setFormState] = useState({ username: '', userType: '', email: '', password: '' });
-    const [signup, { error, data }] = useMutation(SIGNUP);
+    const [formState, setFormState] = useState({ userName: '', userType: '', email: '', password: '' });
+    const [addUser, { error, data }] = useMutation(SIGNUP);
 
     // update state based on form input changes
     const handleChange = (event) => {
@@ -21,25 +21,25 @@ export default function Signup() {
 
     // submit form
     const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      console.log(formState);
-      try {
-        const { data } = await signup({
-          variables: { ...formState },
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const { data } = await addUser({
+                variables: { ...formState },
+            });
+
+            Auth.login(data.addUser.token);
+        } catch (e) {
+            console.error(e);
+        }
+
+        // clear form values
+        setFormState({
+            userName: '',
+            userType: '',
+            email: '',
+            password: '',
         });
-
-        // Auth.signup(data.login.token);
-      } catch (e) {
-        console.error(e);
-      }
-
-      // clear form values
-      setFormState({
-        userName: '',
-        userType: '',
-        email: '',
-        password: '',
-      });
     };
 
     return (
@@ -52,15 +52,19 @@ export default function Signup() {
                         <Form.Check
                             inline
                             label="Owner"
-                            name="group1"
+                            name="userType"
                             type={type}
+                            value="owner"
+                            onChange={handleChange} 
                             id={`inline-${type}-1`}
                         />
                         <Form.Check
                             inline
                             label="Promoter"
-                            name="group1"
+                            name="userType"
                             type={type}
+                            value="promoter"
+                            onChange={handleChange} 
                             id={`inline-${type}-1`}
                         />
                     </div>
@@ -70,7 +74,7 @@ export default function Signup() {
                     <Form.Label>Username</Form.Label>
                     <Form.Control
                         placeholder="Your Username"
-                        name="username"
+                        name="userName"
                         type="username"
                         value={formState.username}
                         onChange={handleChange} />
@@ -96,12 +100,12 @@ export default function Signup() {
                         onChange={handleChange} />
                 </Form.Group>
                 <button
-                  className="btn btn-block btn-info"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                  onClick = { handleFormSubmit }
+                    className="btn btn-block btn-info"
+                    style={{ cursor: 'pointer' }}
+                    type="submit"
+                    onClick={handleFormSubmit}
                 >
-                  Submit
+                    Submit
                 </button>
             </Form>
         </div>
