@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const secret = 'soosorry';
-const expiration = '1h';
+const expiration = '4h';
 
 module.exports = {
   authMiddleware: function ({ req }) {
@@ -24,8 +24,8 @@ module.exports = {
 
     return req;
   },
-  signToken: function ({ userName, userType, email, password }) {
-    const payload = { userName, userType, email, password };
+  signToken: function ({ userName, userType, email, password, _id }) {
+    const payload = { userName, userType, email, password, _id };
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };

@@ -31,12 +31,6 @@ const userSchema = new Schema({
             ref: 'Event'
         },
     ],
-    participants: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Participant'
-        },
-    ]
 });
 
 userSchema.pre('save', async function (next) {
