@@ -5,7 +5,8 @@
     "eventStart": "7pm",
     "eventEnd": "2am",
     "eventType": "Music Festival",
-    "eventDescription": "Electric dance Carnival (EDC) is the largest dance music festival in North America"
+    "eventDescription": "Electric dance Carnival (EDC) is the largest dance music festival in North America",
+    "promoterName": "thedjguy97"
   },
   {
     "eventName":"SneakerCon",
@@ -13,7 +14,8 @@
     "eventStart": "12pm",
     "eventEnd": "6pm",
     "eventType": "Expo",
-    "eventDescription": "Sneaker Con is a premier sneaker show, providing space for vendors to showcase rare sneakers"
+    "eventDescription": "Sneaker Con is a premier sneaker show, providing space for vendors to showcase rare sneakers",
+    "promoterName": "prisonmike88"
   },
   {
     "eventName": "Halo Pro Series",
@@ -21,7 +23,8 @@
     "eventStart": "1pm",
     "eventEnd": "7pm",
     "eventType": "Game Tournament",
-    "eventDescription": "The biggest Halo competetion between some of the best teams around the world, battling it out for $1 million"
+    "eventDescription": "The biggest Halo competetion between some of the best teams around the world, battling it out for $1 million",
+    "promoterName": "thedjguy97"
   },
 
   {
@@ -30,7 +33,8 @@
     "eventStart": "12pm",
     "eventEnd": "8pm",
     "eventType": "Car Show",
-    "eventDescription": "Subaru car show that allows drivers to showcase their modified Subarus"
+    "eventDescription": "Subaru car show that allows drivers to showcase their modified Subarus",
+    "promoterName": "prisonmike88"
   },
   {
     "eventName": "World Battles",
@@ -38,6 +42,7 @@
     "eventStart": "5pm",
     "eventEnd": "9pm",
     "eventType": "Dance Competition",
-    "eventDescription": "Hip-hop dance competition between teams, battling it out for the grand prize of $1 billion"
+    "eventDescription": "Hip-hop dance competition between teams, battling it out for the grand prize of $1 billion",
+    "promoterName": "thedjguy97"
   }
 ]
