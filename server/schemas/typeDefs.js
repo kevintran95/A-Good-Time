@@ -49,7 +49,7 @@ const typeDefs = gql`
     login(userName: String!, password: String!): Auth
 
     addEvent(promoterName: String!, eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
-    addParticipant(eventName: String!,nparticipantName: String!, participantDescription: String!): Participant
+    addParticipant(eventName: String!, participantName: String!, participantDescription: String!): Participant
 
     updateEvent(_id: String!, eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
     updateParticipant(_id: String!, participantName: String!, participantDescription: String!): Participant
