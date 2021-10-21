@@ -12,7 +12,7 @@ Web application that allows promoters to create/remove events. Users will be abl
 
 ## Installation
 
-To begin install please fork the repo and run `npm i` in order to install the necessary packages and then run `npm run install`. After doing so run the commands in the terminal `npm run seed` to cd into the server and seed the data. Then run `npm run develop` which will allow the two servers to run concurrently.
+To begin, install please fork the repo and run `npm i` in order to install the necessary packages and then run `npm run install`. After doing so run the commands in the terminal `npm run seed` to cd into the server and seed the data. Then run `npm run develop` which will allow the two servers to run concurrently.
 
 ## Technologies Used
 - Express.js
