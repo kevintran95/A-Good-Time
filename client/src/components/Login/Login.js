@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Form } from 'react-bootstrap';
-import { useMutation } from '@apollo/react-hooks';
+import Auth from '../../utils/auth';
 
+import { useMutation } from '@apollo/react-hooks';
 import { LOGIN } from '../../utils/mutations'
 
 export default function Login() {
-    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [formState, setFormState] = useState({ userName: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN);
 
     // update state based on form input changes
@@ -27,14 +28,14 @@ export default function Login() {
                 variables: { ...formState },
             });
 
-            // Auth.login(data.login.token);
+            Auth.login(data.login.token);
         } catch (e) {
             console.error(e);
         }
 
         // clear form values
         setFormState({
-            email: '',
+            userName: '',
             password: '',
         });
     };
@@ -46,10 +47,10 @@ export default function Login() {
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
-                        placeholder="Your email"
-                        name="email"
-                        type="email"
-                        value={formState.email}
+                        placeholder="Your userName"
+                        name="userName"
+                        type="userName"
+                        value={formState.userName}
                         onChange={handleChange} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupPassword">
