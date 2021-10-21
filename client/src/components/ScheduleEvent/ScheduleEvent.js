@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-// import Auth from '../../utils/auth';
+import Auth from '../../utils/auth';
+
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_EVENT } from '../../utils/mutations';
 
@@ -27,7 +28,7 @@ export default function ScheduleEvent() {
           variables: { ...formState },
         });
 
-        // Auth.login(data.login.token);
+        Auth.login(data.login.token);
       } catch (e) {
         console.error(e);
       }
