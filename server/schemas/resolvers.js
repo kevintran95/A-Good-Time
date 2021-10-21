@@ -5,7 +5,7 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         events: async () => {
-            return Event.find().populate('Participant');
+            return Event.find().populate('participants');
         },
 
         event: async (parent, { eventName }) => {
@@ -17,7 +17,7 @@ const resolvers = {
         },
 
         participants: async () => {
-            return Participant.find().populate('Event');
+            return Participant.find().populate('events');
         },
 
         participant: async (parent, { participantName }) => {
@@ -50,28 +50,28 @@ const resolvers = {
             return { token, user };
         },
 
-        addEvent: async (parent, { eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
-            const event = await User.create({ eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
-            return {event};
+        addEvent: async (parent, { promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
+            const event = await Event.create({ promoterName, npmeventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
+            return event;
         },
 
-        addParticipant: async (parent, { participantName, participantDescription }) => {
-            const participant = await User.create({ participantName, participantDescription });
-            return {participant};
+        addParticipant: async (parent, { eventName, participantName, participantDescription }) => {
+            const participant = await Participant.create({ eventName, participantName, participantDescription });
+            return participant;
         },
 
-        removeEvent: async (parent, { eventId }) => {
-            return Event.findOneAndDelete({ _id: eventId });
+        removeEvent: async (parent, { eventID }) => {
+            return Event.findOneAndDelete({ _id: eventID });
         },
 
-        removeParticipant: async (parent, { participantId }) => {
-            return Participant.findOneAndDelete({ _id: participantId });
+        removeParticipant: async (parent, { _id }) => {
+            return Participant.findOneAndDelete({ _id: _id });
         },
 
-        updateEvent: async (parent, { eventId, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
-            return Event.findOneAndUpdate({ _id: eventId },
+        updateEvent: async (parent, { _id, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
+            return Event.findOneAndUpdate({ _id: _id },
                 {
-                    $addToSet: { eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }
+                  eventName, eventDate, eventStart, eventEnd, eventType, eventDescription
                 },
                 {
                     new: true,
@@ -80,10 +80,10 @@ const resolvers = {
             );
         },
 
-        updateParticipant: async (parent, {participantId, participantName, participantDescription }) => {
-            return Participant.findOneAndUpdate({ _id, participantId },
+        updateParticipant: async (parent, {_id, participantName, participantDescription }) => {
+            return Participant.findOneAndUpdate({ _id, _id},
                 {
-                    $addToSet: { participantName, participantDescription }
+                  participantName, participantDescription
                 },
                 {
                     new:true,

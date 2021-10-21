@@ -17,6 +17,7 @@ const typeDefs = gql`
 
   type Event {
     _id: ID
+    promoterName: String
     eventName: String
     eventDate: String
     eventStart: String
@@ -28,6 +29,7 @@ const typeDefs = gql`
 
   type Participant {
     _id: ID
+    eventName: String
     participantName: String
     participantDescription: String
     events: [Event]!
@@ -42,14 +44,15 @@ const typeDefs = gql`
   }
 
   type Mutation {
+
     addUser(userName: String!, userType: String!, email: String!, password: String!): Auth
     login(userName: String!, password: String!): Auth
 
-    addEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
-    addParticipant(participantName: String!, participantDescription: String!): Participant
+    addEvent(promoterName: String!, eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
+    addParticipant(eventName: String!,nparticipantName: String!, participantDescription: String!): Participant
 
-    updateEvent(eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
-    updateParticipant(participantName: String!, participantDescription: String!): Participant
+    updateEvent(_id: String!, eventName: String!, eventDate: String!, eventStart: String!, eventEnd: String!, eventType: String!, eventDescription: String!): Event
+    updateParticipant(_id: String!, participantName: String!, participantDescription: String!): Participant
 
     removeEvent(eventID: ID!): Event
     removeParticipant(eventID: ID!): Participant
