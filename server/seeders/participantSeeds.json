@@ -1,21 +1,26 @@
 [
   {
+    "eventName": "EDC",
     "participantName": "Illenium",
     "participantDescription": "American DJ, Nick Miller is best known for this notable album, Ascend and his unique style of music."
   },
   {
+    "eventName": "SneakerCon",
     "participantName": "Brad Hall",
     "participantDescription": "Brad Hall is known for his cringy and awkward sneaker reviews on the Youtube platform"
   },
   {
+    "eventName": "Halo Pro Series",
     "participantName": "Team Liquid",
     "participantDescription": "Team Liquid is a leading worldwide professional esports organization with players competing at the highest level"
   },
   {
+    "eventName": "Subiefest",
     "participantName": "GrimmSpeed",
     "participantDescription": "Founded in 2006 to provide customers with innovative and highly engineered aftermarket products"
   },
   {
+    "eventName": "World Battles",
     "participantName": "jabbawockeez",
     "participantDescription": "The original winners of America's Best Dance Crew 2008."
   }

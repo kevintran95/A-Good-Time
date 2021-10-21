@@ -1,6 +1,11 @@
 const {Schema, model} = require('mongoose');
 
 const eventSchema = new Schema({
+    promoterName: {
+        type: String,
+        required: true,
+        trim: true
+    },
     eventName: {
         type: String,
         required: true,

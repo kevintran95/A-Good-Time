@@ -12,38 +12,22 @@ db.once('open', async () => {
 
     await User.create(profileSeeds);
     for (let i = 0; i < eventSeeds.length; i++) {
-      const { _id, eventName } = await Event.create(eventSeeds[i]);
+      const { _id, promoterName, eventName } = await Event.create(eventSeeds[i]);
       const user = await User.findOneAndUpdate(
-        { username: eventName },
+        { userName: promoterName },
         {
           $addToSet: {
             events: _id,
           },
         }
       );
-    }
-    
-    await Event.create(eventSeeds);
-    for (let i = 0; i < participantSeeds.length; i++) {
-      const { _id, participantName } = await Participant.create(participantSeeds[i]);
-      const event = await Event.findOneAndUpdate(
-        { username: participantName },
-        {
-          $addToSet: {
-            participants: _id,
-          },
-        }
-      );
-    }
 
-    await Participant.create(participantSeeds);
-    for (let i = 0; i < eventSeeds.length; i++) {
-      const { _id, eventName } = await Event.create(eventSeeds[i]);
-      const user = await User.findOneAndUpdate(
-        { username: eventName },
+      const participant = await Participant.create(participantSeeds[i]);
+      const event = await Event.findOneAndUpdate(
+        { eventName: eventName },
         {
           $addToSet: {
-            events: _id,
+            participants: participant._id,
           },
         }
       );
