@@ -51,7 +51,7 @@ const resolvers = {
         },
 
         addEvent: async (parent, { promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
-            const event = await Event.create({ promoterName, npmeventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
+            const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
             return event;
         },
 

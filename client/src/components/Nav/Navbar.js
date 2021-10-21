@@ -2,8 +2,13 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 import {
     Link
 } from "react-router-dom";
+import Auth from '../../utils/auth';
 
 export default function NavbarOne() {
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
+    };
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -22,6 +27,9 @@ export default function NavbarOne() {
                             </li>
                             <li>
                                 <Link to="/signup">Sign Up</Link>
+                            </li>
+                            <li>
+                                <button onClick={logout}>Logout</button>
                             </li>
                         </Nav>
                     </Navbar.Collapse>

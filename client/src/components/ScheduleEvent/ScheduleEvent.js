@@ -6,7 +6,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_EVENT } from '../../utils/mutations';
 
 export default function ScheduleEvent() {
-    const [formState, setFormState] = useState({ eventName: '', eventDate: '', eventStart: '', eventEnd: '', eventType: '', eventDescription: '' });
+    const [formState, setFormState] = useState({ promoterName: '', eventName: '', eventDate: '', eventStart: '', eventEnd: '', eventType: '', eventDescription: '' });
     const [addEvent, { error, data }] = useMutation(ADD_EVENT);
 
     // update state based on form input changes
@@ -28,13 +28,14 @@ export default function ScheduleEvent() {
           variables: { ...formState },
         });
 
-        Auth.login(data.login.token);
+        // Auth.login(data.login.token);
       } catch (e) {
         console.error(e);
       }
 
       // clear form values
       setFormState({
+        promoterName: '',
         eventName: '',
         eventDate: '',
         eventStart: '',
@@ -48,6 +49,16 @@ export default function ScheduleEvent() {
         <div>
             <h1 style={{ background: "red", textAlign: "center" }}>Schedule Event</h1>
             <Form className="col-sm-3" style={{ margin: 0, marginTop: 50, textAlign: "center" }}>
+
+            <Form.Group className="mb-3">
+                    <Form.Label>Promoter Name</Form.Label>
+                    <Form.Control
+                        placeholder="Name Of Promoter"
+                        name="promoterName"
+                        type=" "
+                        value={formState.promoterName}
+                        onChange={handleChange} />
+                </Form.Group>
 
                 <Form.Group className="mb-3">
                     <Form.Label>Event Type</Form.Label>
