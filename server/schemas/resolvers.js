@@ -35,13 +35,13 @@ const resolvers = {
         login: async (parent, { userName, password }) => {
             const user = await User.findOne({ userName });
 
-            if (! user) {
+            if (!user) {
                 throw new AuthenticationError('No user found with this email address');
             }
 
             const correctPw = await user.isCorrectPassword(password);
 
-            if (! correctPw) {
+            if (!correctPw) {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
