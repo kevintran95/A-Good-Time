@@ -50,22 +50,32 @@ const resolvers = {
             return { token, user };
         },
 
-        addEvent: async (parent, { promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
-            const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
-            return event;
+
+        addEvent: async (parent, { promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }, context) => {
+            
+            if (context.user){const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
+            
+            await User.findOneAndUpdate({ _id: context.user._id } , { $addToSet: { events: event._id }});
+            
+            return event;}
+
         },
 
-        addParticipant: async (parent, { eventName, participantName, participantDescription }) => {
-            const participant = await Participant.create({ eventName, participantName, participantDescription });
-            return participant;
+        addParticipant: async (parent, { eventName, participantName, participantDescription }, context) => {
+
+            if (context.user){const participant = await Participant.create({ eventName, participantName, participantDescription });
+            
+            await Event.findOneAndUpdate({ eventName: participant.eventName } , { $addToSet: { participants: participant._id }});
+            
+            return participant;}
         },
 
         removeEvent: async (parent, { eventID }) => {
             return Event.findOneAndDelete({ _id: eventID });
         },
 
-        removeParticipant: async (parent, { _id }) => {
-            return Participant.findOneAndDelete({ _id: _id });
+        removeParticipant: async (parent, { eventID }) => {
+            return Participant.findOneAndDelete({ _id: eventID });
         },
 
         updateEvent: async (parent, { _id, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
