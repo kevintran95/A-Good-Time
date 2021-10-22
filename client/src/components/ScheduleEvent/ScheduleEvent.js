@@ -8,6 +8,7 @@ import { ADD_EVENT } from '../../utils/mutations';
 
 export default function ScheduleEvent() {
     const [formState, setFormState] = useState({ promoterName: '', eventName: '', eventDate: '', eventStart: '', eventEnd: '', eventType: '', eventDescription: '' });
+
     const [addEvent, { error, data }] = useMutation(ADD_EVENT);
 
     // update state based on form input changes
