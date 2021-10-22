@@ -50,6 +50,7 @@ const resolvers = {
             return { token, user };
         },
 
+
         addEvent: async (parent, { promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }, context) => {
             
             if (context.user){const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
@@ -57,6 +58,7 @@ const resolvers = {
             await User.findOneAndUpdate({ _id: context.user._id } , { $addToSet: { events: event._id }});
             
             return event;}
+
         },
 
         addParticipant: async (parent, { eventName, participantName, participantDescription }, context) => {
