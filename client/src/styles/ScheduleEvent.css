@@ -1,0 +1,11 @@
+.eventList {
+  display: block;
+  text-align: center;
+}
+
+#eventForm {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:left;
+}
