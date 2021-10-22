@@ -15,7 +15,7 @@ export const QUERY_EVENTS = gql`
 
 export const QUERY_EVENT = gql`
     query event {
-        events {
+        event {
             eventName,
             eventDate, 
             eventStart,
@@ -25,3 +25,4 @@ export const QUERY_EVENT = gql`
         }
     }
 `;
+
