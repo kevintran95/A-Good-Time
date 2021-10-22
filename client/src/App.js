@@ -16,6 +16,7 @@ import Signup from './components/Signup/Signup';
 import ScheduleEvent from './components/ScheduleEvent/ScheduleEvent';
 import Login from './components/Login/Login'
 import Homepage from './components/Homepage/Homepage';
+import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents';
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -34,6 +35,9 @@ export default function App() {
                         </Route>
                         <Route exact path="/schedule-event">
                             < ScheduleEvent />
+                        </Route>
+                        <Route exact path="/upcoming-events">
+                            <UpcomingEvents />
                         </Route>
                         <Route exact path="/login">
                             <Login />
