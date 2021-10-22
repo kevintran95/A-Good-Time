@@ -44,7 +44,7 @@ export default function Signup() {
     };
 
     return (
-        <div className="navBtn">
+        <div className="signupBtn">
             <Form className="col-sm-3" id="signUp" style={{ margin: 0, textAlign: "center" }}>
 
                 <Form.Label>User Type</Form.Label>

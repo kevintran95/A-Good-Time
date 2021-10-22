@@ -5,7 +5,7 @@ import { QUERY_EVENTS } from '../../utils/queries';
 
 
 import '../../styles/Homepage.css';
-// import rave from '../../assets/raveTime.mp4'
+import rave from '../../assets/raveTime.mp4'
 
 
 export default function Homepage() {
@@ -13,6 +13,7 @@ export default function Homepage() {
             <div>
                 <h3>Upcoming Events</h3>
                 <UpcomingEvents />
+                
             </div>
         )  
 }
