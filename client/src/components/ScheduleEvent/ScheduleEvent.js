@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import Auth from '../../utils/auth';
 import '../../styles/ScheduleEvent.css';
 
 import { useMutation } from '@apollo/react-hooks';
@@ -8,6 +7,7 @@ import { ADD_EVENT } from '../../utils/mutations';
 
 export default function ScheduleEvent() {
     const [formState, setFormState] = useState({ promoterName: '', eventName: '', eventDate: '', eventStart: '', eventEnd: '', eventType: '', eventDescription: '' });
+
     const [addEvent, { error, data }] = useMutation(ADD_EVENT);
 
     // update state based on form input changes
@@ -28,8 +28,9 @@ export default function ScheduleEvent() {
         const { data } = await addEvent({
           variables: { ...formState },
         });
+        console.log(data)
 
-        // Auth.login(data.login.token);
+        
       } catch (e) {
         console.error(e);
       }
