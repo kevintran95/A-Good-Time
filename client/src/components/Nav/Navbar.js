@@ -3,6 +3,7 @@ import {
     Link
 } from "react-router-dom";
 import Auth from '../../utils/auth';
+import '../../styles/NavBar.css';
 
 export default function NavbarOne() {
     const logout = (event) => {

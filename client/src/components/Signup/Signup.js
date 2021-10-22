@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap';
 import Auth from '../../utils/auth';
+import '../../styles/Signup.css';
 
 import { useMutation } from '@apollo/react-hooks';
 import { SIGNUP } from '../../utils/mutations';
