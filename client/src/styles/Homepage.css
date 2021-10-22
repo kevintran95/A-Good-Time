@@ -1,0 +1,11 @@
+/* video{
+  max-height: 100%;
+  max-width: 100%;
+  z-index: -1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+} */
