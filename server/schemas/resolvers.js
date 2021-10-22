@@ -79,6 +79,7 @@ const resolvers = {
         },
 
         updateEvent: async (parent, { _id, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }) => {
+            
             return Event.findOneAndUpdate({ _id: _id },
                 {
                   eventName, eventDate, eventStart, eventEnd, eventType, eventDescription
