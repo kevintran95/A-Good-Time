@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Auth from '../../utils/auth';
+import '../../styles/ScheduleEvent.css';
 
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_EVENT } from '../../utils/mutations';
@@ -48,7 +49,8 @@ export default function ScheduleEvent() {
     return (
         <div>
             <h1 style={{ background: "red", textAlign: "center" }}>Schedule Event</h1>
-            <Form className="col-sm-3" style={{ margin: 0, marginTop: 50, textAlign: "center" }}>
+            <div className="eventList">
+            <Form className="col-sm-3" id="eventForm" style={{ margin: 0, marginTop: 50, textAlign: "center" }}>
 
             <Form.Group className="mb-3">
                     <Form.Label>Promoter Name</Form.Label>
@@ -128,6 +130,7 @@ export default function ScheduleEvent() {
                   Submit
                 </button>
             </Form>
+            </div>
         </div>
     )
 }
