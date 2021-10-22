@@ -44,8 +44,8 @@ export default function Signup() {
     };
 
     return (
-        <div>
-            <Form className="col-sm-3" style={{ margin: 0, textAlign: "center" }}>
+        <div className="navBtn">
+            <Form className="col-sm-3" id="signUp" style={{ margin: 0, textAlign: "center" }}>
 
                 <Form.Label>User Type</Form.Label>
                 {['checkbox'].map((type) => (

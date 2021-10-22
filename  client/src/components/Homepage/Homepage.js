@@ -1,11 +1,11 @@
 import React from 'react'
-import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
+import '../../styles/Homepage.css';
+// import rave from '../../assets/raveTime.mp4'
 
 export default function Homepage() {
     return (
-        <div style={{ width: "50px" }}>
-            <Calendar />
+        <div >
+          
         </div>
     )
 }
