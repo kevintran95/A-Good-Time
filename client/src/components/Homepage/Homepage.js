@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useQuery } from '@apollo/client';
 
-import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
+// import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
 
 import { QUERY_EVENTS } from '../../utils/queries';
 
@@ -19,7 +19,7 @@ export default function Homepage() {
 
         <div>
             <h3>Upcoming Events</h3>
-            <UpcomingEvents events={events} />
+            {/* <UpcomingEvents events={events} /> */}
         </div>
     )
 }
