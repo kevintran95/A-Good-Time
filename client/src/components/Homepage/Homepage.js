@@ -13,6 +13,7 @@ export default function Homepage() {
             <div>
                 <h3>Upcoming Events</h3>
                 <UpcomingEvents />
+                
             </div>
         )  
 }
