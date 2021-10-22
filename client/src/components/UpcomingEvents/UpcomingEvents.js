@@ -10,9 +10,7 @@ export default function UpcomingEvents() {
             <div>
                 Loading...
             </div>
-        )
-
-        
+        ) 
     }
     {
         return (
