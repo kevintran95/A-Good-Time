@@ -45,36 +45,34 @@ export default function Login() {
 
     return (
         <div>
-            <div>
-                <Form className="col-sm-3">
-                    <Form.Group className="mb-3">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control
-                            placeholder="Your userName"
-                            name="userName"
-                            type="userName"
-                            value={formState.userName}
-                            onChange={handleChange} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formGroupPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control
-                            placeholder="Your Password"
-                            name="password"
-                            type="password"
-                            value={formState.password}
-                            onChange={handleChange} />
-                    </Form.Group>
-                    <button
-                        className="btn btn-block btn-info"
-                        style={{ cursor: 'pointer' }}
-                        type="submit"
-                        onClick={handleFormSubmit}
-                    >
-                        Submit
-                    </button>
-                </Form>
-            </div>
+            <Form className="col-sm-3">
+                <Form.Group className="mb-3">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                        placeholder="Your userName"
+                        name="userName"
+                        type="userName"
+                        value={formState.userName}
+                        onChange={handleChange} />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        placeholder="Your Password"
+                        name="password"
+                        type="password"
+                        value={formState.password}
+                        onChange={handleChange} />
+                </Form.Group>
+                <button
+                    className="btn btn-block btn-info"
+                    style={{ cursor: 'pointer' }}
+                    type="submit"
+                    onClick={handleFormSubmit}
+                >
+                    Submit
+                </button>
+            </Form>
         </div>
     )
 }
