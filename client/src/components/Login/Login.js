@@ -44,7 +44,7 @@ export default function Login() {
 
 
     return (
-        <div>
+        <div className="loginFrm">
             <Form className="col-sm-3">
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
