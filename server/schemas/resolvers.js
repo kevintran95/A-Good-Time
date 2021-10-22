@@ -52,8 +52,10 @@ const resolvers = {
 
 
         addEvent: async (parent, { promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }, context) => {
-            
-            if (context.user){const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
+            console.log("adding event")
+            if (context.user){
+                console.log("I made it into context")
+                const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
             
             await User.findOneAndUpdate({ _id: context.user._id } , { $addToSet: { events: event._id }});
             
