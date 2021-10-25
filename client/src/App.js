@@ -53,7 +53,7 @@ export default function App() {
             <div>
                 <Router>
                     {/* <h1 className="logo" style={{}}> */}
-                        <img src={logo} alt="logo"></img>
+                        {/* <img src={logo} alt="logo"></img> */}
                     {/* </h1> */}
                     <NavbarOne />
                     <Switch>
