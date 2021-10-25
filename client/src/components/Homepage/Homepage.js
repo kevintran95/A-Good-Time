@@ -21,7 +21,8 @@ export default function Homepage() {
                     height: "100%",
                     objectFit: "cover",
                     transform: "translate(-50%, -50%)",
-                    zIndex: "-1"
+                    zIndex: "-1",
+                    marginTop: "3%"
                 }}>
                     <source src={raveTime} type="video/mp4"></source>
                 </video>
