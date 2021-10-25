@@ -9,3 +9,14 @@ video{
   top: 0;
   left: 0;
 }
+
+h4 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+img {
+  width: 25%;
+  height: auto;
+}
+

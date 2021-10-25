@@ -2,7 +2,7 @@ import {Navbar, Container, Nav} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import Auth from '../../utils/auth';
 import '../../styles/NavBar.css';
-import logo from '../../assets/agoodtimeLogo.png'
+// import logo from '../../assets/agoodtimeLogo.png'
 
 export default function NavbarOne() {
     const logout = (event) => {
@@ -13,14 +13,14 @@ export default function NavbarOne() {
         <div> {
             Auth.loggedIn() ? (
                 <div className="top-menu">
-                    <h1 className="logo">
+                    {/* <h1 className="logo">
                         <img src={logo} alt="logo"></img>
-                    </h1>
+                    </h1> */}
                     <Navbar bg="light" expand="lg">
                         <Container>
                             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                             <Navbar.Collapse id="basic-navbar-nav">
-                                <Nav className="me-auto" style={{color: "black"}}>
+                                <Nav className="Nav">
                                     <li>
                                         <Link className="color" to="/">Home</Link>
                                     </li>
@@ -40,14 +40,14 @@ export default function NavbarOne() {
                 </div>
             ) : (
                 <div className="top-menu">
-                    <h1 className="logo">
+                    {/* <h1 className="logo">
                         <img src={logo} alt="logo"></img>
-                    </h1>
+                    </h1> */}
                     <Navbar bg="light" expand="lg">
                         <Container>
                             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                             <Navbar.Collapse id="basic-navbar-nav">
-                                <Nav className="me-auto" style={{color: "black"}}>
+                                <Nav className="Nav">
                                     <li>
                                         <Link to="/">Home</Link>
                                     </li>

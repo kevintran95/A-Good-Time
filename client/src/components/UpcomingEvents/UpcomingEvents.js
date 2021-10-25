@@ -6,11 +6,11 @@ export default function UpcomingEvents() {
     const { loading, data } = useQuery(QUERY_EVENTS);
     const events = data?.events || [];
     if (loading) {
-        return(
+        return (
             <div>
                 Loading...
             </div>
-        ) 
+        )
     }
     {
         return (
@@ -19,11 +19,13 @@ export default function UpcomingEvents() {
                 {events &&
                     events.map((event) => (
                         <div key={event._id}>
-                            <h4>{event.eventName}</h4>
+                            <ul>
+                                <h4>{event.eventName}</h4>
+                            </ul>
                         </div>
                     ))}
             </div>
-        );  
+        );
     }
 };
 
