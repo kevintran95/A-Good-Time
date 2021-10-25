@@ -118,7 +118,7 @@ export default function Signup() {
                 </Form.Group>
                 <button
                     className="btn btn-block btn-info"
-                    style={{ cursor: 'pointer' }}
+                    style={{ cursor: 'pointer', background: "black", color: "white", border: "red" }}
                     type="submit"
                     onClick={handleFormSubmit}
                 >

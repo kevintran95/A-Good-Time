@@ -45,7 +45,7 @@ export default function Login() {
 
     return (
         <div className="loginFrm">
-            <Form className="col-sm-3">
+            <Form className="col-sm-3" style={{ textAlign: "center" }}>
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
@@ -66,7 +66,7 @@ export default function Login() {
                 </Form.Group>
                 <button
                     className="btn btn-block btn-info"
-                    style={{ cursor: 'pointer' }}
+                    style={{ cursor: 'pointer', background: "black", color: "white", border: "red" }}
                     type="submit"
                     onClick={handleFormSubmit}
                 >
