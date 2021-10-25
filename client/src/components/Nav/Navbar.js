@@ -31,7 +31,7 @@ export default function NavbarOne() {
                                         <Link to="/upcoming-events">Upcoming Events</Link>
                                     </li>
                                     <li>
-                                        <button onClick={logout}>Logout</button>
+                                        <button className="logoutBtn" onClick={logout}>Logout</button>
                                     </li>
                                 </Nav>
                             </Navbar.Collapse>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 import '../../styles/Signup.css';
+import raveTime from '../../assets/raveTime.mp4'
 
 import { useMutation } from '@apollo/react-hooks';
 import { SIGNUP } from '../../utils/mutations';
@@ -45,6 +46,21 @@ export default function Signup() {
 
     return (
         <div className="signupBtn">
+            <video autoPlay loop muted
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    left: "50%",
+                    top: "50%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "translate(-50%, -50%)",
+                    zIndex: "-1",
+                    marginTop: "3%"
+                }}>
+                <source src={raveTime} type="video/mp4"></source>
+            </video>
+
             <Form className="col-sm-3" id="signUp" style={{ margin: 0, textAlign: "center" }}>
 
                 <Form.Label>User Type</Form.Label>
@@ -56,7 +72,7 @@ export default function Signup() {
                             name="userType"
                             type={type}
                             value="owner"
-                            onChange={handleChange} 
+                            onChange={handleChange}
                             id={`inline-${type}-1`}
                         />
                         <Form.Check
@@ -65,7 +81,7 @@ export default function Signup() {
                             name="userType"
                             type={type}
                             value="promoter"
-                            onChange={handleChange} 
+                            onChange={handleChange}
                             id={`inline-${type}-1`}
                         />
                     </div>

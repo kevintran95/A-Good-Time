@@ -1,6 +1,7 @@
 .eventList {
   display: block;
   text-align: center;
+  background-color: darkgray;
 }
 
 #eventForm {
@@ -8,4 +9,11 @@
   margin-left: auto;
   margin-right: auto;
   text-align:left;
+}
+
+.submitBtn {
+  cursor: pointer;
+    background: black;
+    color: white;
+    border: red;
 }

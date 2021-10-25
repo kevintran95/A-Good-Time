@@ -49,10 +49,10 @@ export default function ScheduleEvent() {
 
     return (
         <div>
-            <h1 style={{ background: "red", textAlign: "center" }}>Schedule Event</h1>
             <div className="eventList">
             <Form className="col-sm-3" id="eventForm" style={{ margin: 0, marginTop: 50, textAlign: "center" }}>
 
+            <h1 style={{ textAlign: "center", marginLeft: 53 }}>Schedule Event</h1>
             <Form.Group className="mb-3">
                     <Form.Label>Promoter Name</Form.Label>
                     <Form.Control
@@ -123,8 +123,8 @@ export default function ScheduleEvent() {
                         onChange={handleChange} />
                 </Form.Group>
                 <button
-                  className="btn btn-block btn-info"
-                  style={{ cursor: 'pointer' }}
+                  className="btn btn-block btn-info submitBtn"
+                  style={{ cursor: 'pointer', background: "black", color: "white", border: "red" }}
                   type="submit"
                   onClick = { handleFormSubmit }
                 >
