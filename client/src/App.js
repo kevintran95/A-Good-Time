@@ -12,6 +12,8 @@ import {
     Route,
 } from "react-router-dom";
 
+import './App.css'
+
 import { setContext } from '@apollo/client/link/context';
 import NavbarOne from './components/Nav/Navbar';
 import Signup from './components/Signup/Signup';
@@ -19,6 +21,8 @@ import ScheduleEvent from './components/ScheduleEvent/ScheduleEvent';
 import Login from './components/Login/Login'
 import Homepage from './components/Homepage/Homepage';
 import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents';
+
+import logo from './assets/agoodtimeLogo.png'
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -48,6 +52,9 @@ export default function App() {
         <ApolloProvider client={client}>
             <div>
                 <Router>
+                    {/* <h1 className="logo" style={{}}> */}
+                        <img src={logo} alt="logo"></img>
+                    {/* </h1> */}
                     <NavbarOne />
                     <Switch>
                         <Route exact path="/">
