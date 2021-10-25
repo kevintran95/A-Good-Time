@@ -36,13 +36,13 @@ const resolvers = {
             const user = await User.findOne({ userName });
 
             if (!user) {
-                throw new AuthenticationError('No user found with this email address');
+                throw new AuthenticationError('No user found with this username');
             }
 
             const correctPw = await user.isCorrectPassword(password);
 
             if (!correctPw) {
-                throw new AuthenticationError('Incorrect credentials');
+                throw new AuthenticationError('Incorrect password');
             }
 
             const token = signToken(user);
@@ -53,9 +53,7 @@ const resolvers = {
 
         addEvent: async (parent, { promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription }, context) => {
             console.log("adding event")
-            if (context.user){
-                console.log("I made it into context")
-                const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
+            if (context.user){const event = await Event.create({ promoterName, eventName, eventDate, eventStart, eventEnd, eventType, eventDescription });
             
             await User.findOneAndUpdate({ _id: context.user._id } , { $addToSet: { events: event._id }});
             
@@ -64,7 +62,7 @@ const resolvers = {
         },
 
         addParticipant: async (parent, { eventName, participantName, participantDescription }, context) => {
-
+            console.log("adding participant")
             if (context.user){const participant = await Participant.create({ eventName, participantName, participantDescription });
             
             await Event.findOneAndUpdate({ eventName: participant.eventName } , { $addToSet: { participants: participant._id }});
