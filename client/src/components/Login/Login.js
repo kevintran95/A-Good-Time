@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 import '../../styles/Login.css';
+import raveTime from '../../assets/raveTime.mp4'
 
 import { useMutation } from '@apollo/react-hooks';
 import { LOGIN } from '../../utils/mutations'
@@ -45,7 +46,21 @@ export default function Login() {
 
     return (
         <div className="loginFrm">
-            <Form className="col-sm-3" style={{ textAlign: "center" }}>
+            <video autoPlay loop muted
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    left: "50%",
+                    top: "50%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "translate(-50%, -50%)",
+                    zIndex: "-1",
+                    marginTop: "3%"
+                }}>
+                <source src={raveTime} type="video/mp4"></source>
+            </video>
+            <Form className="col-sm-3" style={{ textAlign: "center", marginTop: 110 }}>
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
