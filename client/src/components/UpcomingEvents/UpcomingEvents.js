@@ -16,13 +16,16 @@ export default function UpcomingEvents() {
     {
         return (
             <div>
-                <h3>Come Join The Fun</h3>
+                <h3 style={{ marginTop: 50, textAlign: "center"}}>Come Join The Fun</h3>
                 {events &&
                     events.map((event) => (
                         <div key={event._id}>
-                            <Card style={{ width: '18rem', margin: 20, textAlign: "center" }}>
+                            <Card className="card" style={{ textAlign: "center", background: "red", marginTop: 70, margin: "auto", border: "white" }}>
                                 <Card.Body>
                                     <Card.Title>{event.eventName}</Card.Title>
+                                    <h4>{new Date(event.eventDate/1000).getTime()}</h4>
+                                    <h4>Start Time: {event.eventStart}</h4>
+                                    <h4>End Time: {event.eventEnd}</h4>
                                 </Card.Body>
                             </Card>
                         </div>
