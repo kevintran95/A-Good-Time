@@ -16,6 +16,7 @@ export default function Signup() {
         const { name, value } = event.target;
 
         setFormState({
+            // setting the form state of whatever input name you type into by spreading the formstate
             ...formState,
             [name]: value,
         });
